@@ -281,7 +281,7 @@ text-align: center;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    line-height: 2;
+    line-height: 1.75;
   }
   body::before, body::after {
     width: 30%;
