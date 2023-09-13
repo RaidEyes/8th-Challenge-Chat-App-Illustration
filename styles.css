@@ -1,0 +1,299 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+  }
+  body {
+    position: relative;
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    background-color: var(--background-color);     
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+  /* -================Variables ================= */
+  :root {
+    --sub-heading: hsl(276, 100%, 81%);
+    --chat-left: hsl(276, 55%, 52%);
+    --chat-right:hsl(271, 15%, 43%);
+    --place-holder: hsl(206, 6%, 79%);
+    --main-heading:hsl(271, 36%, 24%);
+    --main-parapraph:hsl(270, 7%, 64%);
+    --gradient-one:hsl(293, 100%, 63%);
+    --gradient-two:hsl(264, 100%, 61%);
+    --background-color:hsl(270, 20%, 96%);
+    --submit-button: hsl(271, 36%, 24%);
+    --radio-outline: hsl(289, 100%, 72%);
+    --padding-block: 1rem;
+    --padding-inline: 1rem;
+  }
+/* =================== Main Section ============== */
+#main-section {
+  height: 100vh;
+}
+body::before, body::after {
+    content: '';
+    position: absolute;
+    height: 60%;
+    width: 50%;
+}
+body::before {
+    top: 0;
+    left: 0;
+    border-radius: 0 0 20rem 0;
+    background-image: linear-gradient(180deg, var(--gradient-one), var(--gradient-two));
+   z-index: -1;
+}
+body::after {
+    bottom: 0;
+    right: 0;
+    border-radius: 20rem 0 0 0;
+    background-color: rgba(128, 128, 128, 0.062);
+    z-index: -1;
+    
+    }
+.main-content {
+  transform: scale(0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-inline: calc(var(--padding-inline) + 2rem);
+    padding-block: calc(var(--padding-block) + 4rem);
+    gap: 6rem;
+    z-index: 3;
+}
+/* ===================== App Interface ======================== */
+.app {
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    border: 10px solid white;
+    background-color: var(--background-color);
+    gap: 1rem;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.574);
+    }
+.app .box-text {
+    padding-inline: var(--padding-inline);
+}
+/* -------Header content--------- */
+.header-box-content {
+    display: flex;
+    flex-direction: row;
+    padding-inline: var(--padding-inline);
+    padding-block: var(--padding-block);
+    background-image: linear-gradient(to left, var(--gradient-one), var(--gradient-two));
+    border-radius: 45px 45px 20px 20px;
+    position: relative;
+    padding-top: 3rem;
+    align-items: center;
+    overflow: hidden;
+}
+.header-box-content::after {
+    content: '';
+    background-color: white;
+    width: 50%;
+    height: 1.5rem;
+    position: absolute;
+    left: 25%;
+    top: 0;
+    border-radius: 0 0 50px 50px;
+} 
+.header-box-content img {
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.header-box-content .menu {
+    position: absolute;
+    right: 1rem;
+    opacity: 0.5;
+  }
+  .header-box-content * {
+    color: white;
+  }
+
+  .name {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  .sub-name {
+    opacity: 0.5;
+  }
+  /* ==================== App Text Box =================== */
+  .box-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .dog-img {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  .dog {
+    border-radius: 15px;
+    width: 20%;
+  }
+
+  .chat-left {
+    color: var(--chat-left);
+    background-color: hsla(276, 55%, 52%, 0.118);
+    border-radius: 15px;
+    width: 60%;
+    padding-inline: var(--padding-inline);
+    padding-block: 0.5rem;
+  }
+  .chat-right {
+    color: var(--chat-right);
+    background-color: white;
+    border-radius: 15px;
+    width: fit-content;
+    max-width: 60%;
+    padding-inline: var(--padding-inline);
+    padding-block: 0.5rem;
+    box-shadow: 5px 5px 10px rgba(128, 128, 128, 0.574);
+  }
+  .text-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-end;
+  }
+  /* ===================== Price CSS ================= */
+   .price {
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(to right, var(--gradient-one), var(--gradient-two));
+    justify-content: space-between;
+    width: 80%;
+    align-items: center;
+    color: white;
+    padding-inline: var(--padding-inline);
+    padding-block: 0.5rem;
+    border-radius: 15px 15px 15px 8px;
+  }
+  .price span {
+    color: white;
+    vertical-align: middle;
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+  .price .text {
+    font-weight: 300 ;
+    opacity: 0.7;  
+}
+.price-option {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-right: 1rem;
+}
+/* ================== button =================== */
+.form {
+    position: relative;
+}
+.input-text {
+    border-style: none;
+    width: 100%;
+    padding-block: var(--padding-block);
+    border-radius: 50px;
+    opacity: 0.5;
+    padding-inline: calc(var(--padding-inline) + 1rem);
+}
+
+.btn {
+    border-radius: 50%;
+    position: absolute;
+   right: 1rem;
+   top: 0.5rem;
+   bottom: 0.5rem;
+   color: white;
+   background-color: var(--submit-button);
+}
+
+/* ============== Testimonials ============== */
+.testimonial {
+    text-align: center;
+}
+
+.testimonial-header {
+    font-size: 3.5rem;
+    color: var(--main-heading);
+    font-weight: 500;
+}
+.testimonial-paragraph {
+    font-size: 1.4rem;
+    color: var(--main-parapraph);
+}
+/* ================= Footer ================= */
+.attribution {
+display: block;
+text-align: center;
+}
+
+/* =================== media ================ */
+@media only screen and (min-width: 1440px)  {
+  #main-section {
+    display: flex;
+    justify-content: center;
+  }
+  .main-content {
+    flex-direction: row;
+    padding-block: 5rem;
+    transform: scale(0.65);
+    gap: 15rem;      
+  }
+  .testimonial {
+    max-width: 45%;
+    text-align: left;
+  }
+  body::before, body::after {
+    width: 30%;
+    height: 80%;
+          }
+  body::after {
+    border-radius: 40rem 0 0 0;
+  }
+
+  body::before {
+    border-radius: 0 0 40rem 40rem;
+    left: -9rem;
+    width: 40%;
+  }
+  .app {
+    max-width: 425px;
+    position: relative;
+  }
+}
